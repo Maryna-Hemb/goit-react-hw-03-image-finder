@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { Formik, Form, Field } from 'formik';
+import { Formik } from 'formik';
 import { FcSearch } from 'react-icons/fc';
-import { nanoid } from 'nanoid';
+
 import {
   Header,
   FormField,

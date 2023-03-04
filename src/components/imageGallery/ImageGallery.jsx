@@ -1,11 +1,9 @@
 import { Component } from 'react';
-import * as basicLightbox from 'basiclightbox';
 import PropTypes from 'prop-types';
 import { ImageGalleryItem } from 'components/imageGalleryItem/ImageGalleryItem';
 import { List, ListItem } from './ImageGallery.styled';
 import { FeatchImages } from '../../servises/ApiRequest';
 import { Button } from '../button/Button';
-import { Modal } from 'components/modal/Modal';
 
 export class ImageGallery extends Component {
   state = {
@@ -17,7 +15,7 @@ export class ImageGallery extends Component {
   };
 
   async componentDidUpdate(prevProps, prevState) {
-    const { page, searchImages, showLoadMore, per_page } = this.state;
+    const { page, per_page } = this.state;
 
     const prevName = prevProps.queryName;
     const nextName = this.props.queryName;
@@ -50,7 +48,7 @@ export class ImageGallery extends Component {
         console.log(error);
       }
     }
-    // console.log(this.state);
+
     if (prevPage !== newPage) {
       this.setState({ status: 'pending' });
       try {

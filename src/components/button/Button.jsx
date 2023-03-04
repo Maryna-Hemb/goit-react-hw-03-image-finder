@@ -4,7 +4,7 @@ import { BtnWraper, Btn } from './Button.styled';
 export const Button = ({ onClick }) => {
   return (
     <BtnWraper>
-      <Btn onClick={onClick} type="button" className="style.Button">
+      <Btn onClick={onClick} type="button">
         Load more
       </Btn>
     </BtnWraper>

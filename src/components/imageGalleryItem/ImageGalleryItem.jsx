@@ -8,10 +8,10 @@ export class ImageGalleryItem extends Component {
     showModal: false,
   };
 
-  // ModalOpen = () => {
-  //   this.setState({ showModal: true });
-  //   console.log(this.state);
-  // };
+  ModalOpen = () => {
+    this.setState({ showModal: true });
+    console.log(this.state);
+  };
 
   ModalClose = () => {
     this.setState({ showModal: false });
@@ -24,7 +24,7 @@ export class ImageGalleryItem extends Component {
           src={this.props.previewURL}
           alt={this.props.tags}
           onClick={() => {
-            this.setState({ showModal: true });
+            this.setState(this.ModalOpen);
           }}
         />
         {this.state.showModal && (

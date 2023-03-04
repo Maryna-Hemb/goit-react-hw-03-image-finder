@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Layout = styled.div`
   // width: 600px;
-  // min-height: 100vh;
+  min-height: 100vh;
   // padding: 36px;
   margin-left: auto;
   margin-right: auto;

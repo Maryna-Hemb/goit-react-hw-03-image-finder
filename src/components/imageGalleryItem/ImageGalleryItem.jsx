@@ -15,7 +15,7 @@ export class ImageGalleryItem extends Component {
           onClick={() => {
             this.setState({ showModal: true });
           }}
-          src={this.props.previewURL}
+          src={this.props.webformatURL}
           alt={this.props.tags}
         />
         {this.state.showModal && (
@@ -24,7 +24,7 @@ export class ImageGalleryItem extends Component {
               this.setState({ showModal: false });
             }}
           >
-            <img src={this.props.pageURL} alt={this.props.tags} />
+            <img src={this.props.largeImageURL} alt={this.props.tags} />
           </Modal>
         )}
       </>
@@ -33,6 +33,7 @@ export class ImageGalleryItem extends Component {
 }
 
 ImageGalleryItem.propTypes = {
-  previewURL: PropTypes.string.isRequired,
+  webformatURL: PropTypes.string.isRequired,
+  largeImageURL: PropTypes.string.isRequired,
   tags: PropTypes.string.isRequired,
 };

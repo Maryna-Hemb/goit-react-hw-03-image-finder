@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
+import { toast } from 'react-hot-toast';
 import { FcSearch } from 'react-icons/fc';
 
 import {
@@ -15,9 +16,13 @@ const initialValues = {
 };
 export const Searchbar = ({ onAddnewQueryName }) => {
   const hendleSubmit = (value, { resetForm }) => {
-    // console.log(value);
-    onAddnewQueryName({ ...value });
-    resetForm();
+    if (value.queryName.trim() !== '') {
+      console.log({ ...value });
+      onAddnewQueryName({ ...value });
+      resetForm();
+    } else {
+      toast.error('Please enter a valid image title...');
+    }
   };
   return (
     <Header className="searchbar">
@@ -28,6 +33,7 @@ export const Searchbar = ({ onAddnewQueryName }) => {
             <FcSearch size={30} />
             <ButtonLabel className="button-label">Search</ButtonLabel>
           </Button>
+
           <Input
             className="input"
             name="queryName"

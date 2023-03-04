@@ -25,15 +25,12 @@ export class ImageGallery extends Component {
 
     if (prevName !== nextName) {
       this.setState({ status: 'pending' });
-      console.log(per_page);
       this.setState({ page: 1 });
+
       try {
         const galleryMake = await FeatchImages(nextName, page, per_page);
-        this.setState(
-          { searchImages: galleryMake.hits },
-          console.log(this.state)
-        );
-        console.log(per_page);
+        this.setState({ searchImages: galleryMake.hits });
+
         if (Math.ceil(galleryMake.totalHits / per_page) > page) {
           this.setState({
             status: 'resolved',
@@ -80,7 +77,7 @@ export class ImageGallery extends Component {
             <ListItem key={id}>
               <ImageGalleryItem
                 previewURL={previewURL}
-                fullImg={pageURL}
+                pageURL={pageURL}
                 tags={tags}
               />
             </ListItem>

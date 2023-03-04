@@ -1,8 +1,5 @@
 import { Component } from 'react';
-// import { createPortal } from 'react-dom';
 import { Overlay, ModalStyle } from '../modal/Modal.styled';
-
-// const modalRoot = document.querySelector('#modalRoot');
 
 export class Modal extends Component {
   componentDidMount() {
@@ -21,18 +18,15 @@ export class Modal extends Component {
 
   handleBackdropClick = e => {
     if (e.target === e.currentTarget) {
-      return this.props.onModalClick();
+      return this.props.onClose();
     }
   };
 
   render() {
     return (
       <Overlay onClick={this.handleBackdropClick}>
-        <ModalStyle>
-          <img src={this.props.previewURL} alt={this.props.tags} />
-        </ModalStyle>
+        <ModalStyle>{this.props.children}</ModalStyle>
       </Overlay>
-      // modalRoot
     );
   }
 }

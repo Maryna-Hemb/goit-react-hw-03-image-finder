@@ -57,7 +57,7 @@ export class ImageGallery extends Component {
     }
 
     if (newPage !== '' && prevPage !== newPage) {
-      this.setState({ status: 'pending' });
+      // this.setState({ status: 'pending' });
       try {
         const galleryMake = await FeatchImages(nextName, page, per_page);
         this.setState(prevState => ({

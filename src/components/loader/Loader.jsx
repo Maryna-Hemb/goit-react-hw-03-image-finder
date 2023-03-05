@@ -1,18 +1,18 @@
-import { Vortex } from 'react-loader-spinner';
-// import style from './Loader.module.css';
+import { Circles } from 'react-loader-spinner';
+import { LoaderSection } from './Loader.styled';
 
 export const Loader = () => {
   return (
-    <section className="">
-      <Vortex
-        visible={true}
-        height="80"
-        width="80"
-        ariaLabel="vortex-loading"
+    <LoaderSection>
+      <Circles
+        height="150"
+        width="150"
+        color="rgba(63, 81, 181, 1)"
+        ariaLabel="circles-loading"
         wrapperStyle={{}}
-        wrapperClass="vortex-wrapper"
-        colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
+        wrapperClass=""
+        visible={true}
       />
-    </section>
+    </LoaderSection>
   );
 };
